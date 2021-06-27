@@ -4,7 +4,11 @@ import java.util.TreeMap;
 import java.util.Map.Entry;
 
 public class Statement {
-    private TreeMap<LocalDate, ArrayList<Operation>> operations = new TreeMap<>();
+    private TreeMap<LocalDate, ArrayList<Operation>> operations = new TreeMap<>(); /// avoir un historique par date et
+                                                                                   /// trié car le treeMap demande que
+                                                                                   /// la clé implémente la
+                                                                                   /// classe comparable(LocalDate l'a
+                                                                                   /// par defaut)
 
     public void addOperationToStatement(Operation op) {
         ArrayList<Operation> list;
