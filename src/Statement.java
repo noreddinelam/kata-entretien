@@ -1,9 +1,10 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.TreeMap;
+import java.util.Map.Entry;
 
 public class Statement {
-    private TreeMap<Date, ArrayList<Operation>> operations;
+    private TreeMap<LocalDate, ArrayList<Operation>> operations = new TreeMap<>();
 
     public void addOperationToStatement(Operation op) {
         ArrayList<Operation> list;
@@ -14,5 +15,19 @@ public class Statement {
             list.add(op);
             this.operations.put(op.getDate(), list);
         }
+    }
+
+    public void printStatement() {
+        for (Entry<LocalDate, ArrayList<Operation>> entry : this.operations.entrySet()) {
+            System.out.println("La date : " + entry.getKey());
+            System.out.println("===========================================");
+            for (Operation op : entry.getValue()) {
+                System.out.println(op);
+                System.out.println("--------------------------------------------");
+            }
+            System.out.println("===========================================");
+
+        }
+
     }
 }

@@ -1,3 +1,3 @@
 public enum OperationType {
-    Withdraw, Deposit;
+    Withdrawal, Deposit;
 }
